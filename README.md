@@ -70,3 +70,16 @@ app.set("view engine", "html");
 // res.render('error');
 res.render("error.jade");
 ```
+
+## 客户端安装引入 Vue-Router
+
+Vue-Router 默认使用 hash 模式
+正常安装并在客户端页面中正常使用后打包
+服务端亦可正常使用
+
+在使用 history 模式下
+不刷新页面的情况下可正常使用
+若刷新页面则会倒是未注册的路由无法显示
+**解决方案**：在服务端注册相同路由并指向 index
+
+## Vue-CLI 配置修改后自动打包
