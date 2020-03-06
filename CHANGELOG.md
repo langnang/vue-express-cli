@@ -67,4 +67,24 @@ Vue-Router 默认使用 hash 模式
 npm install -g nodemon
 ```
 
+- 连接 Vue+Express 使 Vue 可跨域访问 Express 服务
+
+```json
+// Vue.config.js
+{
+  "devServer": {
+    // 代理跨域
+    "proxy": {
+      "/api": {
+        "target": "http://localhost:3333",
+        "changeOrigin": true,
+        "pathRewrite": {
+          "^/api": "/api"
+        }
+      }
+    }
+  }
+}
+```
+
 - 连接 Vue+Express 使只需要单个命令可启动整个项目
